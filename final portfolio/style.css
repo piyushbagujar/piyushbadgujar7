@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Gilroy Medium';
+    src: url('asset/fonts/Gilroy-Medium.e7e7c091.ttf') format('truetype');
+    font-weight: normal; /* Use normal for regular weight */
+    font-style: normal; /* Use normal for regular style */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy Medium', sans-serif; /* Fallback to sans-serif */
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.reveal .parent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow-y: hidden;
+}
+.reveal .parent .child{
+    display: block;
+}
+.child span{
+    display: inline-block;
+}
+#nav a .line{
+    position: absolute;
+    bottom: 0;
+    height: 1.5px;
+    background-color:black ;
+}
+#line1{
+    left: 0;
+    width: 0%;
+    transition:all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    transition-delay: .1s;
+}
+#line2{
+    right: 0;
+    transition:all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    width: 100%;
+}
+#nav a:hover #line2{
+    width: 0%;
+}
+#nav a:hover #line1{
+    width: 100%;
+}
+path,polyline{
+    stroke: rgb(0, 255, 85);
+}
+
+#aboutimage .aboutcont:nth-child(1){
+    transform: translate(-20%, -20%) rotate(-20deg);
+    
+}
+#aboutimage .aboutcont:nth-child(2){
+    transform: translate(0%, 0%) rotate(-15deg);
+    
+}
+#aboutimage .aboutcont:nth-child(3){
+    transform: translate(20%, 10%) rotate(-5deg);
+    
+}
+#aboutimage .aboutcont{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+#aboutimage .aboutcont img:hover{
+    filter: grayscale(0);
+}
+#works::before{
+    content: "";
+    position: absolute;
+    top:-75px;
+    width: 100%;
+    height: 150px;
+    transform: rotate(-180deg);
+    background: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+    background-size: cover;
+    
+    
+}
+.aboutcont {
+    position: relative; /* Stable position */
+    transform-origin: center; /* Ensure rotation occurs around the center */
+    will-change: transform; /* Optimize animation performance */
+    padding: 10px; /* Optional: Add inner spacing for each image */
+}
+/* Styling the hollow text */
+.hollow-text {
+    -webkit-text-stroke: 4px #969292;
+    color: transparent; /* Makes the inside of the text transparent */
+    
+}
+.hollow-text span {
+    -webkit-text-stroke: 4px #00ff40;
+    color: transparent; /* Makes the inside of the text transparent */
+    
+}
+
+.fillimagediv h4 {
+    border: 1px solid #fdf9f9;
+    position: relative;
+    transition: all ease 0.4s;
+    overflow: hidden;
+    color: #ff0000; /* Keep text color visible */
+    z-index: 1; /* Ensures text stays above the ::after pseudo-element */
+}
+
+.fillimagediv h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.874); /* Semi-transparent to ensure visibility of the text */
+    left: 0;
+    bottom: -100%;
+    transition: all ease 0.4s;
+    z-index: 0; /* Keeps ::after below the text */
+}
+
+.fillimagediv h4:hover::after {
+    bottom: 0;
+    border-radius: 0%; /* Optional: Keep or remove as per design needs */
+}
+
+
+
+
